@@ -1,0 +1,7 @@
+/grade-processes.sh
+/*.tar.gz
+/*/*/program
+build/
+program
+grade-*.sh
+verify-*.sh
