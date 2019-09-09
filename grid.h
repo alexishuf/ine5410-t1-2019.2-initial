@@ -1,4 +1,5 @@
 #ifndef INE5410_GRID_H_
+#define INE5410_GRID_H_
 
 #include <stddef.h>
 #include <semaphore.h>

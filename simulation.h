@@ -1,4 +1,5 @@
 #ifndef INE5410_SIMULATION_H_
+#define INE5410_SIMULATION_H_
 
 #include "grid.h"
 #include "queue.h"
