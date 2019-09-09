@@ -1,4 +1,4 @@
-CFLAGS=-pthread -D_POSIX_C_SOURCE=200809L -g -O0
+CFLAGS=-pthread -D_POSIX_C_SOURCE=200809L -g -O0 -I. 
 # Só ativa sanitizers se não estivermos no cygwin nem num vgbuild
 ifneq ($(OS),Windows_NT)
 	ifneq ($(DISABLE_SANS),1)
