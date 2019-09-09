@@ -1,5 +1,5 @@
 #ifndef __INE5410_SEMAPHORE_H__
-//#ifdef __APPLE__
+#ifdef __APPLE__
     #define __INE5410_SEMAPHORE_H__
     
     #ifdef __deprecated
@@ -50,5 +50,5 @@
     
     #include </usr/include/semaphore.h>
     
-//#endif /*__APPLE__*/
+#endif /*__APPLE__*/
 #endif /*__INE5410_SEMAPHORE_H__*/
