@@ -58,20 +58,4 @@ void simulation_unplug(simulation_t* simulation, person_t* person);
  */
 void simulation_start(simulation_t* simulation);
 
-/**
- * Pausa a execução do simulation. As threads responsáveis pela execução não
- * terminam, mas apenas permanecem aguardando a finalização da simulação com
- * simulation_stop() ou a continuação com simulation_continue().
- *
- * Não tem efeito se simulation_start() ainda não foi chamado.
- */
-void simulation_pause(simulation_t* simulation);
-
-/**
- * Continua uma simulação pausada com simulation_pause(). 
- *
- * Não tem efeito se simulation_pause() ainda não foi chamado.
- */
-void simulation_continue(simulation_t* simulation);
-
 #endif /*INE5410_SIMULATION_H_*/

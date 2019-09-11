@@ -32,11 +32,3 @@ void simulation_start(simulation_t* simulation) {
     // ...
 }
 
-void simulation_pause(simulation_t* simulation) {
-    // ...
-}
-
-void simulation_continue(simulation_t* simulation) {
-    // ...
-}
-

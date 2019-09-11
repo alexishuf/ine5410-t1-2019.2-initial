@@ -4,7 +4,7 @@
 #include "test.h"
 
 int main(int argc, char** argv) {
-    int cycles = 5;
+    int cycles = 1;
     if (argc < 3) {
         printf("Uso: %s n_threads test [cycles]\n"
                "\n"
