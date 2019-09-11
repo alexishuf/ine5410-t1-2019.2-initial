@@ -42,8 +42,8 @@ int simulation_plug_unsafe(simulation_t* simulation, person_t* person);
  * Versão de simulation_plug_unsafe que pode ser chamada com a simulação em
  * andamento.
  *
- * A pessoa será inserida na passagem de um turno para outro, de modo a não
- * causar inconsistências na simulação.
+ * A pessoa será inserida de modo a não causar inconsistências na simulação. 
+ * Isso implica que essa função bloqueará até que a inserção seja segura
  */
 int simulation_plug(simulation_t* simulation, person_t* person);
 

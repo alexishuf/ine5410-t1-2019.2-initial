@@ -64,7 +64,7 @@ static void test__free_persons(person_t* data, int size) {
 
 int  test_setup(test_t* t, int n_threads, const char* path) {
     int err = 0;
-    t->pid = t->shutting_down = t->width = t->height = 0;
+    t->pid = t->shutting_down = 0;
     t->persons =    (person_t*)malloc(sizeof(person_t)*(t->persons_cap = 100));
     t->insertions = (person_t*)malloc(sizeof(person_t)*(t->insertions_cap = 10));
     t->insertions_size = t->persons_size = 0;
