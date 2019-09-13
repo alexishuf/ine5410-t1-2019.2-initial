@@ -12,9 +12,11 @@
 #undef sem_t
 
 #include <errno.h>
+#include <stddef.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <time.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 
@@ -58,7 +60,17 @@ int ine5410_sem_wait(ine5410_sem_t* sem) {
 }
 
 int ine5410_sem_timedwait(ine5410_sem_t* sem, const struct timespec* ts) {
-    return sem_timedwait(sem->ptr, ts);    
+    // sem_timedwait() não está disponível no Mac OS. Logo, é
+    // necessário fazer uma gambiarra nojenta aqui. Não esse tipo de
+    // coisa nos seus trabalhos!
+    long ns_step = 50*1000000;
+    size_t n_loops = (double)ts->tv_sec/0.050 + (double)ts->tv_nsec/ns_step;
+    int err = EAGAIN;
+    for (size_t i = 0; i  < n_loops && (err=ine5410_sem_trywait(sem)) != 0; ++i) {
+        struct timespec step = {0, ns_step};
+        nanosleep(&step, NULL);
+    }
+    return err;
 }
 
 int ine5410_sem_trywait(ine5410_sem_t* sem) {
