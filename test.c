@@ -166,7 +166,7 @@ int  test_setup(test_t* t, int n_threads, const char* path) {
 
 void* test_inserter(void* arg) {
     test_t* t = (test_t*)arg;
-    while (t->shutting_down) {
+    while (!t->shutting_down) {
         int ipid = t->pid;
         for (int i = 0; i < t->insertions_size; ++i) {
             t->insertions[i].id = ++ipid;
